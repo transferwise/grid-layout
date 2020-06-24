@@ -6,21 +6,19 @@ const cssImport = require("postcss-import");
 const nested = require("postcss-nested");
 const cssnano = require("cssnano");
 const notify = require("gulp-notify");
-const root = require("postcss-remove-root");
 
 function css() {
   return gulp
-    .src("./src/less/grid-layout.less")
+    .src("./src/less/*.less")
     .pipe(less())
     .pipe(
       postcss([
         cssImport(),
         nested(),
         postcssPresetEnv({
-          //   autoprefixer: { grid: true },
+          // autoprefixer: { grid: true },
           stage: 1,
         }),
-        // root(),
       ])
     )
     .pipe(postcss([cssnano()]))
@@ -34,7 +32,7 @@ function css() {
 
 function neptune() {
   return gulp
-    .src("./src/less/neptune.less")
+    .src("./src/neptune.less")
     .pipe(less())
     .pipe(postcss([cssImport()]))
     .pipe(postcss([cssnano()]))
@@ -47,8 +45,7 @@ function neptune() {
 }
 
 function watch() {
-  gulp.watch("./src/*.less");
-  //   gulp.watch("./src/neptune.less", neptune);
+  gulp.watch("./src/less/*.less", css);
 }
 
 const build = gulp.series(css, neptune);

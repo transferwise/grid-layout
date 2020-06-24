@@ -1,0 +1,34 @@
+@import "../../node_modules/@transferwise/neptune-css/dist/css/neptune-tokens.css";
+@import "../../node_modules/@transferwise/neptune-css/src/less/variables/_custom-media.less";
+
+html {
+  scroll-behavior: smooth;
+}
+
+h2,
+h3,
+h4 {
+  padding-top: var(--space-48);
+}
+
+.doc-menu {
+  @media (--screen-md) {
+    position: sticky;
+    top: 40px;
+  }
+}
+
+.doc-grid-layout {
+  display: grid;
+  align-items: flex-start; /* To allow stickyness */
+
+  @media (--screen-md) {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.item {
+  padding: var(--space-16);
+  background-color: var(--color-background-neutral);
+  border: 1px solid var(--color-text-secondary);
+}

@@ -13,17 +13,21 @@
 <body>
     <section class="doc-grid-layout section">
         <ul class="doc-menu">
-              <li>
-                <a href="#columns">Grid Layout in Neptune</a>
+            <li>
+                <a href="#responsive-columns">Responsive columns</a>
             </li>
             <li>
                 <a href="#gap">Gap</a>
             </li>
+      
             <li>
                 <a href="#alignment">Aligment</a>
             </li>
             <li>
                 <a href="#common-patterns">Common patterns</a>
+            </li>
+            <li>
+                <a href="#columns">Grid Layout in Neptune</a>
             </li>
             <li>
                 <a href="#bootstrap">Bootstrap cols</a>
@@ -34,6 +38,158 @@
             <p>
                 The columns are defined in the <strong>parent component</strong>
             </p>
+            <pre>
+&lt;div class="grid-2"&gt;
+    &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div class="item"&gt;Item&lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            <h2 id="responsive-columns">Responsive columns</h2>
+            <p>Basic simple system</p>
+            <h3>.grid-2</h3>
+            <div class="grid-2">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+            <h3>.grid-2--md</h3>
+            <div class="grid-2--md">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+            <h3>.grid-3</h3>
+            <div class="grid-3">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+            <h3>.grid-3--md</h3>
+            <div class="grid-3--md">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+            <h3>.grid-4</h3>
+            <div class="grid-4">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+            <h3>.grid-4--md</h3>
+            <div class="grid-4--md">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+            <h3>.grid-2 .grid-4--md: Combined</h3>
+            <div class="grid-2 grid-4--md">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+
+            <h3 id="gap" class="">
+                Gap
+            </h3>
+            <ul>
+                <li>The <strong>default</strong> --gap is 100%/12. More or less as a Bootstrap col size.</li>
+                <li>The <strong>small</strong> --gap is --space-24</li>
+            </ul>
+            <p></p>
+            <pre>
+:root {
+    --gap: calc(100% / 12);
+}</pre>
+            <pre>
+&lt;div class="grid-2 with-gap"&gt;
+    &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div class="item"&gt;Item&lt;/div&gt;
+&lt;/div&gt;</pre>
+            <h4 id="gap" class="">
+                .with-gap
+            </h4>
+            <div class="grid-2 with-gap">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+            <h3 class="">.with-gap--sm</h3>
+            <div class="grid-2 with-gap--sm">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+
+
+            <h2 id="common-patterns" class="">Common patters</h2>
+            <h3 class="">Bootstrap: .col-md-10 .col-md-offset-1</h3>
+            <div class="row">
+                <div class="item col-md-10 col-md-offset-1">
+                    This is some content
+                </div>
+            </div>
+            <h3 class="">Grid layout: .grid-10</h3>
+            <div class="grid-10">
+                <div class="item">
+                    This is some content
+                    <div class="item">Nested content </div>
+                </div>
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+            </div>
+            <h3 class="">Bootstrap: .col-md-8 .col-md-offset-2</h3>
+            <div class="row">
+                <div class="item col-md-8 col-md-offset-2">
+                    This is some content
+                </div>
+            </div>
+            <h3 class="">Grid layout: grid-8</h3>
+            <div class="grid-8">
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+            </div>
+
+            <h2 id="alignment" class="">Alignment</h2>
+            <div class="d-grid grid--1-1">
+                <div class="item">This is some content</div>
+                <div class="item">
+                    This is some content. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Sed tempor, lacus vel consequat viverra, tellus orci
+                    aliquet ante, sed lacinia orci orci in dui. Pellentesque pellentesque
+                    ultricies ex, ut faucibus orci finibus non. Phasellus blandit laoreet
+                    eros, eget mattis sem lacinia vitae. Nam dignissim viverra metus et
+                    tincidunt. Vestibulum eu nibh molestie, mattis nisl ut, scelerisque
+                    erat. Sed vitae est at quam vulputate congue sit amet a sapien. Ut
+                    eleifend cursus ex. In in nulla vitae ex viverra eleifend vitae et
+                    lectus. In aliquam, eros sit amet scelerisque laoreet, purus risus
+                    gravida ante, sit amet porttitor est nulla et nisi. Duis tempus magna
+                    enim, et condimentum ipsum iaculis vel. Cras eget consectetur sem.
+                    Pellentesque pretium enim a metus laoreet, sit amet interdum orci
+                    vestibulum. Aliquam ut dolor at leo consectetur scelerisque.{" "}
+                </div>
+            </div>
+            <div class="d-grid grid--1-1 align-items--center">
+                <div class="item">This is some content</div>
+                <div class="item">
+                    This is some content. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Sed tempor, lacus vel consequat viverra, tellus orci
+                    aliquet ante, sed lacinia orci orci in dui. Pellentesque pellentesque
+                    ultricies ex, ut faucibus orci finibus non. Phasellus blandit laoreet
+                    eros, eget mattis sem lacinia vitae. Nam dignissim viverra metus et
+                    tincidunt. Vestibulum eu nibh molestie, mattis nisl ut, scelerisque
+                    erat. Sed vitae est at quam vulputate congue sit amet a sapien. Ut
+                    eleifend cursus ex. In in nulla vitae ex viverra eleifend vitae et
+                    lectus. In aliquam, eros sit amet scelerisque laoreet, purus risus
+                    gravida ante, sit amet porttitor est nulla et nisi. Duis tempus magna
+                    enim, et condimentum ipsum iaculis vel. Cras eget consectetur sem.
+                    Pellentesque pretium enim a metus laoreet, sit amet interdum orci
+                    vestibulum. Aliquam ut dolor at leo consectetur scelerisque.{" "}
+                </div>
+            </div>
+
 
             <h2 id="columns">Grid Layout in current Neptune CSS</h2>
             <p class="alert alert-danger">Need to review. Select the useful combinations</p>
@@ -118,88 +274,8 @@
                 <div class="item">Item</div>
                 <div class="item">Item</div>
             </div>
-            <h3 id="gap" class="">
-                Gap
-            </h3>
-            <h4 id="gap" class="">
-                .with-gap
-            </h4>
-            <div class="d-grid grid--1-2 with-gap">
-                <div class="item">Item</div>
-                <div class="item">Item</div>
-            </div>
-            <h3 class="">.with-gap--sm</h3>
-            <div class="d-grid grid--1-2 with-gap--sm">
-                <div class="item">Item</div>
-                <div class="item">Item</div>
-            </div>
 
-            <h2 id="common-patterns" class="">Common patters</h2>
-            <h3 class="">Bootstrap: .col-md-10 .col-md-offset-1</h3>
-            <div class="row">
-                <div class="item col-md-10 col-md-offset-1">
-                    This is some content
-                </div>
-            </div>
-            <h3 class="">Grid layout: .grid-10</h3>
-            <div class="grid-10">
-                <div class="item">
-                    This is some content
-                    <div class="item">Nested content </div>
-                </div>
-                <div class="item">This is some content</div>
-                <div class="item">This is some content</div>
-            </div>
-            <h3 class="">Bootstrap: .col-md-8 .col-md-offset-2</h3>
-            <div class="row">
-                <div class="item col-md-8 col-md-offset-2">
-                    This is some content
-                </div>
-            </div>
-            <h3 class="">Grid layout: grid-8</h3>
-            <div class="grid-8">
-                <div class="item">This is some content</div>
-                <div class="item">This is some content</div>
-                <div class="item">This is some content</div>
-            </div>
 
-            <h2 id="alignment" class="">Alignment</h2>
-            <div class="d-grid grid--1-1">
-                <div class="item">This is some content</div>
-                <div class="item">
-                    This is some content. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Sed tempor, lacus vel consequat viverra, tellus orci
-                    aliquet ante, sed lacinia orci orci in dui. Pellentesque pellentesque
-                    ultricies ex, ut faucibus orci finibus non. Phasellus blandit laoreet
-                    eros, eget mattis sem lacinia vitae. Nam dignissim viverra metus et
-                    tincidunt. Vestibulum eu nibh molestie, mattis nisl ut, scelerisque
-                    erat. Sed vitae est at quam vulputate congue sit amet a sapien. Ut
-                    eleifend cursus ex. In in nulla vitae ex viverra eleifend vitae et
-                    lectus. In aliquam, eros sit amet scelerisque laoreet, purus risus
-                    gravida ante, sit amet porttitor est nulla et nisi. Duis tempus magna
-                    enim, et condimentum ipsum iaculis vel. Cras eget consectetur sem.
-                    Pellentesque pretium enim a metus laoreet, sit amet interdum orci
-                    vestibulum. Aliquam ut dolor at leo consectetur scelerisque.{" "}
-                </div>
-            </div>
-            <div class="d-grid grid--1-1 align-items--center">
-                <div class="item">This is some content</div>
-                <div class="item">
-                    This is some content. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Sed tempor, lacus vel consequat viverra, tellus orci
-                    aliquet ante, sed lacinia orci orci in dui. Pellentesque pellentesque
-                    ultricies ex, ut faucibus orci finibus non. Phasellus blandit laoreet
-                    eros, eget mattis sem lacinia vitae. Nam dignissim viverra metus et
-                    tincidunt. Vestibulum eu nibh molestie, mattis nisl ut, scelerisque
-                    erat. Sed vitae est at quam vulputate congue sit amet a sapien. Ut
-                    eleifend cursus ex. In in nulla vitae ex viverra eleifend vitae et
-                    lectus. In aliquam, eros sit amet scelerisque laoreet, purus risus
-                    gravida ante, sit amet porttitor est nulla et nisi. Duis tempus magna
-                    enim, et condimentum ipsum iaculis vel. Cras eget consectetur sem.
-                    Pellentesque pretium enim a metus laoreet, sit amet interdum orci
-                    vestibulum. Aliquam ut dolor at leo consectetur scelerisque.{" "}
-                </div>
-            </div>
             <h3 class="">Semantic spacing?</h3>
 
             <h1 id="bootstrap" class=" colored-dot">Bootstrap col system</h1>

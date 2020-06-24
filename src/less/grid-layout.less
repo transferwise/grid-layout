@@ -1,51 +1,60 @@
 @import "../../node_modules/@transferwise/neptune-css/dist/css/neptune-tokens.css";
+@import "../../node_modules/@transferwise/neptune-css/src/less/variables/_custom-media.less";
 
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--space-16);
+  padding-left: var(--space-16);
 
-
-/* @import './grid-layout/_grid-layout-ie11.less';
-  @import './grid-layout/_grid-layout-no-support.less'; */
+  @media (--screen-sm) {
+    padding-right: var(--space-24);
+    padding-left: var(--space-24);
+  }
+  @media (--screen-lg) {
+    padding-right: var(--space-32);
+    padding-left: var(--space-32);
+  }
+  @media (--screen-xl) {
+    max-width: 1164px;
+  }
+}
 
 @supports (display: grid) and (grid-template-columns: repeat(3, 1fr)) and
   (grid-row-gap: 1%) and (grid-gap: 1%) and (grid-column-gap: 1%) {
-  .d-grid {
+  [class^="grid-"],
+  [class*=" grid-"] {
     display: grid;
-  }
 
-  .grid--1-1-1-1-1 {
-    grid-template-columns: repeat(5, 1fr);
-
-    &--md {
-      @media all and (--screen-md) {
-        grid-template-columns: repeat(5, 1fr);
-      }
+    &::before {
+      content: none; /* Permits to use with container */
     }
   }
 
-  .grid--1-1-1-1 {
+  .grid-4 {
     grid-template-columns: repeat(4, 1fr);
+  }
 
-    &--md {
-      @media all and (--screen-md) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  [class^="grid-"],
+  [class*=" grid-"] {
+    @media all and (--screen-md) {
+      &.grid-4--md {
         grid-template-columns: repeat(4, 1fr);
       }
-    }
-  }
 
-  .grid--1-1-1 {
-    grid-template-columns: repeat(3, 1fr);
-
-    &--md {
-      @media all and (--screen-md) {
+      &.grid-3--md {
         grid-template-columns: repeat(3, 1fr);
       }
-    }
-  }
 
-  .grid--1-1 {
-    grid-template-columns: repeat(2, 1fr);
-
-    &--md {
-      @media all and (--screen-md) {
+      &.grid-2--md {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -162,15 +171,19 @@
 
 /* Gaps */
 
-/* [class^="grid--"],
- [class*=" grid--"] {
-   grid-gap: calc(var(--spacer) * 4);
+// [class^="grid--"],
+// [class*=" grid--"] {
+//   grid-gap: calc(var(--spacer) * 4);
 
-   [class^="grid--"],
-   [class*=" grid--"] {
-     grid-gap: calc(var(--spacer) * 2);
-   }
- } */
+//   [class^="grid--"],
+//   [class*=" grid--"] {
+//     grid-gap: calc(var(--spacer) * 2);
+//   }
+// }
+
+:root {
+  --gap: calc(100% / 12);
+}
 
 .with-gap {
   grid-gap: calc(100% / 12);
@@ -181,13 +194,10 @@
 }
 
 /* Patterns */
-:root {
-  --col1: calc(100% / 12);
-}
 
 .grid-10 {
   display: grid;
-  grid-template-columns: var(--col1) 1fr var(--col1);
+  grid-template-columns: var(--gap) 1fr var(--gap);
   > * {
     grid-column: 2;
   }
@@ -195,7 +205,7 @@
 
 .grid-8 {
   display: grid;
-  grid-template-columns: calc(var(--col1) * 2) 1fr calc(var(--col1) * 2);
+  grid-template-columns: calc(var(--gap) * 2) 1fr calc(var(--gap) * 2);
   > * {
     grid-column: 2;
   }
