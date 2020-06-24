@@ -20,7 +20,7 @@ function css() {
           //   autoprefixer: { grid: true },
           stage: 1,
         }),
-        root(),
+        // root(),
       ])
     )
     .pipe(postcss([cssnano()]))
