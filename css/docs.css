@@ -1,0 +1,19 @@
+html {
+  scroll-behavior: smooth;
+}
+.doc-menu {
+  position: sticky;
+  top: 40px;
+}
+
+.doc-grid-layout {
+  display: grid;
+  grid-template-columns: 10vw 1fr;
+  align-items: flex-start; 
+}
+
+.item {
+  padding: var(--space-16);
+  background-color: var(--color-background-neutral);
+  border: 1px solid var(--color-text-secondary);
+}
