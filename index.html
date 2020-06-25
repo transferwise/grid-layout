@@ -101,8 +101,8 @@
             </ul>
             <pre>
 &lt;div class="container grid-2"&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </pre>
             <p>Ordering is applied to the child item.</p>
@@ -222,13 +222,13 @@
             <p>It's totally fine to nest grids</p>
 <pre>
     &lt;div class="grid-2 gap"&gt;
-        &lt;div class="item"&gt;Item
+        &lt;div&gt;...
             &lt;div class="grid-2"&gt;
-                &lt;div class="item"&gt;Item&lt;/div&gt;
-                &lt;div class="item"&gt;Item&lt;/div&gt;
+                &lt;div&gt;...&lt;/div&gt;
+                &lt;div&gt;...&lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class="item"&gt;Item&lt;/div&gt;
+        &lt;div&gt;...&lt;/div&gt;
     &lt;/div&gt;
     </pre>
             <div class="grid-2 gap">
@@ -243,18 +243,18 @@
             
         <pre class="m-t-4">
 &lt;div class="container-8 grid-2"&gt;
-    &lt;div class="item"&gt;Item
-        &lt;div class="grid-2"&gt;
-            &lt;div class="item"&gt;Item&lt;/div&gt;
-            &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div&gt;...
+        &lt;div class="grid-2--md gap"&gt;
+            &lt;div&gt;...&lt;/div&gt;
+            &lt;div&gt;...&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </pre>
-            <div class="container-8 grid-2 gap">
+            <div class="container-8 grid-2">
                 <div class="item">Item
-                    <div class="grid-2">
+                    <div class="grid-2--md gap">
                         <div class="item">Item</div>
                         <div class="item">Item</div>
                     </div>
@@ -266,10 +266,10 @@
             <p>The rows are autoplaced. You don´t have to do anything.</p>
             <pre>
 &lt;div class="grid-3"&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </pre>
             <h3>.grid-3</h3>
@@ -290,8 +290,8 @@
 
             <pre>
 &lt;div class="grid-2 gap"&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
 &lt;/div&gt;</pre>
 
             <h3 class="">.gap</h3>
@@ -328,9 +328,9 @@
             <p>The reverse mode is only horizontal (by now).</p>
             <h3>.reverse</h3>
             <pre>
-&lt;div class="grid-2 reverse"&gt;
-    &lt;div class="item"&gt;1 item&lt;/div&gt;
-    &lt;div class="item"&gt;2 item&lt;/div&gt;
+&lt;div class="grid-<i>n</i> reverse"&gt;
+    &lt;div&gt;...&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
 &lt;/div&gt;</pre>
             <div class="grid-2 reverse">
                 <span class="item">1 item</span>
@@ -353,10 +353,10 @@
             <h3>.order-1--mobile</h3>
             <pre>
 &lt;div class="grid-4--md"&gt;
-    &lt;div class="item"&gt;1 item&lt;/div&gt;
-    &lt;div class="item"&gt;2 item&lt;/div&gt;
-    &lt;div class="item order-1--mobile"&gt;3 item&lt;/div&gt;
-    &lt;div class="item"&gt;4 item&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
+    &lt;div class="order-1--mobile"&gt;...&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
 &lt;/div&gt;</pre>
             <div class="grid-4--md">
                 <span class="item">1 item</span>
@@ -412,8 +412,8 @@
             <h3>.grid-sidebar</h3>
             <pre>
 &lt;div class="grid-sidebar"&gt;
-    &lt;div class="item"&gt;1 item&lt;/div&gt;
-    &lt;div class="item"&gt;2 item&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
+    &lt;div&gt;...&lt;/div&gt;
 &lt;/div&gt;</pre>
             <div class="grid-sidebar">
                 <div class="item"></div>
