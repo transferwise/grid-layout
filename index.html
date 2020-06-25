@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <section class="doc-grid-layout section">
+    <section class="doc-grid-layout grid-sidebar section">
         <nav>
             <ul class="doc-menu">
                 <li>
@@ -22,6 +22,9 @@
                 </li>
                 <li>
                     <a href="#responsive-columns">Responsive columns</a>
+                </li>
+                <li>
+                    <a href="#nesting">Nesting grids</a>
                 </li>
                 <li>
                     <a href="#rows">Rows</a>
@@ -94,6 +97,7 @@
             <ul>
                 <li>The columns are defined in the <strong>parent component</strong>.</li>
                 <li>The grid classes can be applied to the <code>.container</code> element.</li>
+                <li>Firefox dev tools work amazing for grid creation.</li>
             </ul>
             <pre>
 &lt;div class="container grid-2"&gt;
@@ -117,7 +121,7 @@
             <h3 class="">.container-10</h3>
             <p>This is the same result as tipical .col-md-10 .col-md-offset-1 from Bootstrap</p>
             <p class="alert alert-warning">Need a semantic name for this?</p>
-<pre>
+            <pre>
 &lt;div class="container-10"&gt;
 ...
 &lt;/div&gt;
@@ -143,7 +147,7 @@
                     This is some content
                 </div>
             </div>
-   
+
             <h3 class="">.container-8</h3>
             <div class="container-8">
                 <div class="item">This is some content</div>
@@ -214,6 +218,50 @@
                 <div class="item">Item</div>
             </div>
 
+            <h2 id="nesting">Nesting grids</h2>
+            <p>It's totally fine to nest grids</p>
+<pre>
+    &lt;div class="grid-2 gap"&gt;
+        &lt;div class="item"&gt;Item
+            &lt;div class="grid-2"&gt;
+                &lt;div class="item"&gt;Item&lt;/div&gt;
+                &lt;div class="item"&gt;Item&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;/div&gt;
+    </pre>
+            <div class="grid-2 gap">
+                <div class="item">Item
+                    <div class="grid-2">
+                        <div class="item">Item</div>
+                        <div class="item">Item</div>
+                    </div>
+                </div>
+                <div class="item">Item</div>
+            </div>
+            
+        <pre class="m-t-4">
+&lt;div class="container-8 grid-2"&gt;
+    &lt;div class="item"&gt;Item
+        &lt;div class="grid-2"&gt;
+            &lt;div class="item"&gt;Item&lt;/div&gt;
+            &lt;div class="item"&gt;Item&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="item"&gt;Item&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            <div class="container-8 grid-2 gap">
+                <div class="item">Item
+                    <div class="grid-2">
+                        <div class="item">Item</div>
+                        <div class="item">Item</div>
+                    </div>
+                </div>
+                <div class="item">Item</div>
+            </div>
+
             <h2 id="rows">Rows</h2>
             <p>The rows are autoplaced. You don´t have to do anything.</p>
             <pre>
@@ -236,7 +284,7 @@
             <ul>
                 <li>The <strong>default</strong> --gap is <strong>--space-16</strong> for mobile,
                     <strong>--space-24</strong> for desktop</li>
-                <li>The <strong>column</strong> --gap is <strong>100%/12</strong>. More or less as a Bootstrap col size.
+                <li>The <strong>column</strong> --gap is <strong>1/12</strong>. More or less as a Bootstrap col size.
                 </li>
             </ul>
 
@@ -263,7 +311,7 @@
                 <div class="item">Item</div>
             </div>
             <h3 class="">.gap--column</h3>
-            <p>Gap only for columns. The space is 100%/12</p>
+            <p>Gap only for columns. The space is 1/12</p>
             <pre>
     :root {
         --gap: calc(100% / 12);
@@ -304,12 +352,12 @@
             <p>The class must be added to the <strong>child item</strong></p>
             <h3>.order-1--mobile</h3>
             <pre>
-                &lt;div class="grid-4--md"&gt;
-                    &lt;div class="item"&gt;1 item&lt;/div&gt;
-                    &lt;div class="item"&gt;2 item&lt;/div&gt;
-                    &lt;div class="item order-1--mobile"&gt;3 item&lt;/div&gt;
-                    &lt;div class="item"&gt;4 item&lt;/div&gt;
-                &lt;/div&gt;</pre>
+&lt;div class="grid-4--md"&gt;
+    &lt;div class="item"&gt;1 item&lt;/div&gt;
+    &lt;div class="item"&gt;2 item&lt;/div&gt;
+    &lt;div class="item order-1--mobile"&gt;3 item&lt;/div&gt;
+    &lt;div class="item"&gt;4 item&lt;/div&gt;
+&lt;/div&gt;</pre>
             <div class="grid-4--md">
                 <span class="item">1 item</span>
                 <span class="item">2 item</span>
@@ -358,6 +406,19 @@
                 </div>
             </div>
 
+            <h2 id="common-patterns">Common patterns</h2>
+            <p>Do we have common layout patterns?</p>
+
+            <h3>.grid-sidebar</h3>
+            <pre>
+&lt;div class="grid-sidebar"&gt;
+    &lt;div class="item"&gt;1 item&lt;/div&gt;
+    &lt;div class="item"&gt;2 item&lt;/div&gt;
+&lt;/div&gt;</pre>
+            <div class="grid-sidebar">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
 
             <h2 id="columns">Grid Layout in current Neptune CSS</h2>
             <p class="alert alert-danger">Need to review. Select the useful combinations</p>
