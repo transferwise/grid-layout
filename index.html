@@ -172,10 +172,8 @@
 
             <h2 id="responsive-columns">Responsive columns</h2>
             <p>Basic simple system</p>
-            <p class="alert alert-warning">By now only 1 breakpoint in medium size 768px & 2, 3 4 columns. Do we need
-                more?</p>
             <h3>.grid-2</h3>
-<pre>
+            <pre>
     &lt;div class="grid-2"&gt;
         &lt;div&gt;...&lt;/div&gt;
         &lt;div&gt;...&lt;/div&gt;
@@ -184,13 +182,29 @@
                 <div class="item">Item</div>
                 <div class="item">Item</div>
             </div>
+            <h3>.grid-2--sm</h3>
+            <div class="grid-2--sm">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
             <h3>.grid-2--md</h3>
             <div class="grid-2--md">
                 <div class="item">Item</div>
                 <div class="item">Item</div>
             </div>
+            <h3>.grid-2--lg</h3>
+            <div class="grid-2--lg">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
             <h3>.grid-3</h3>
             <div class="grid-3">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+            <h3>.grid-3--sm</h3>
+            <div class="grid-3--sm">
                 <div class="item">Item</div>
                 <div class="item">Item</div>
                 <div class="item">Item</div>
@@ -201,8 +215,21 @@
                 <div class="item">Item</div>
                 <div class="item">Item</div>
             </div>
+            <h3>.grid-3--lg</h3>
+            <div class="grid-3--lg">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
             <h3>.grid-4</h3>
             <div class="grid-4">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+            <h3>.grid-4--sm</h3>
+            <div class="grid-4--sm">
                 <div class="item">Item</div>
                 <div class="item">Item</div>
                 <div class="item">Item</div>
@@ -215,8 +242,15 @@
                 <div class="item">Item</div>
                 <div class="item">Item</div>
             </div>
-            <h3>.grid-2 .grid-4--md: Combined</h3>
-            <div class="grid-2 grid-4--md">
+            <h3>.grid-4--lg</h3>
+            <div class="grid-4--lg">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+            <h3>Combined: .grid-2 .grid-3--md .grid-4--lg</h3>
+            <div class="grid-2 grid-3--md grid-4--lg">
                 <div class="item">Item</div>
                 <div class="item">Item</div>
                 <div class="item">Item</div>
@@ -225,7 +259,7 @@
 
             <h2 id="nesting">Nesting grids</h2>
             <p>It's totally fine to nest grids</p>
-<pre>
+            <pre>
     &lt;div class="grid-2 gap"&gt;
         &lt;div&gt;...
             &lt;div class="grid-2"&gt;
@@ -245,8 +279,8 @@
                 </div>
                 <div class="item">Item</div>
             </div>
-            
-        <pre class="m-t-4">
+
+            <pre class="m-t-4">
 &lt;div class="container-8 grid-2"&gt;
     &lt;div&gt;...
         &lt;div class="grid-2--md gap"&gt;
