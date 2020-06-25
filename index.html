@@ -15,6 +15,12 @@
         <nav>
             <ul class="doc-menu">
                 <li>
+                    <a href="#general-usage">General usage</a>
+                </li>
+                <li>
+                    <a href="#container">Container</a>
+                </li>
+                <li>
                     <a href="#responsive-columns">Responsive columns</a>
                 </li>
                 <li>
@@ -59,7 +65,7 @@
                 <li>Replace the Bootstrap cols system, instead of using both.</li>
                 <li>Document the process of learnings.</li>
             </ul>
-           
+
             <div class="grid-2 gap">
                 <div>
                     <h3>Pros</h3>
@@ -82,19 +88,84 @@
                 </div>
             </div>
             <p>Want to know more about grid layout?
-            <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank"
-            rel="noopener noreferrer">Here a complete guide</a></p>
-            <h2>General usage</h2>
-            <p>
-                The columns are defined in the <strong>parent component</strong>
-            </p>
+                <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank"
+                    rel="noopener noreferrer">Here a complete guide</a></p>
+            <h2 id="general-usage">General usage</h2>
+            <ul>
+                <li>The columns are defined in the <strong>parent component</strong>.</li>
+                <li>The grid classes can be applied to the <code>.container</code> element.</li>
+            </ul>
             <pre>
-&lt;div class="grid-2"&gt;
+&lt;div class="container grid-2"&gt;
     &lt;div class="item"&gt;Item&lt;/div&gt;
     &lt;div class="item"&gt;Item&lt;/div&gt;
 &lt;/div&gt;
-            </pre>
+</pre>
             <p>Ordering is applied to the child item.</p>
+
+            <h2 id="container">Container</h2>
+            <h3>.container</h3>
+            <p>This is the same container we use currently in Neptune.
+            </p>
+            <pre>
+&lt;div class="container"&gt;
+...
+&lt;/div&gt;
+</pre>
+            <div class="container item">...</div>
+
+            <h3 class="">.container-10</h3>
+            <p>This is the same result as tipical .col-md-10 .col-md-offset-1 from Bootstrap</p>
+            <p class="alert alert-warning">Need a semantic name for this?</p>
+<pre>
+&lt;div class="container-10"&gt;
+...
+&lt;/div&gt;
+</pre>
+            <div class="container-10">
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+            </div>
+
+            <h3 class="">.container-10--md</h3>
+            <p>If you need this layout only for desktop. Use this case.</p>
+            <div class="container-10--md">
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+            </div>
+
+            <h3 class="">Example with Bootstrap grid: .col-md-10 .col-md-offset-1</h3>
+            <p>The boostrap system has a horizontal margin: -12px in the row, that's why it is a bit wider. </p>
+            <div class="row">
+                <div class="item col-md-10 col-md-offset-1">
+                    This is some content
+                </div>
+            </div>
+   
+            <h3 class="">.container-8</h3>
+            <div class="container-8">
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+            </div>
+
+            <h3 class="">.container-8--md</h3>
+            <div class="container-8--md">
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+                <div class="item">This is some content</div>
+            </div>
+
+            <h3 class="">Example with Bootstrap grid: .col-md-8 .col-md-offset-2</h3>
+            <div class="row">
+                <div class="item col-md-8 col-md-offset-2">
+                    This is some content
+                </div>
+            </div>
+
+
             <h2 id="responsive-columns">Responsive columns</h2>
             <p>Basic simple system</p>
             <p class="alert alert-warning">By now only 1 breakpoint in medium size 768px & 2, 3 4 columns. Do we need
@@ -246,48 +317,6 @@
                 <span class="item">4 item</span>
             </div>
 
-            <h2 id="common-patterns" class="">Common patters</h2>
-            <h3 class="">Bootstrap: .col-md-10 .col-md-offset-1</h3>
-            <p>The boostrap system has a horizontal margin: -12px in the row, that's why it is a bit wider. </p>
-            <div class="row">
-                <div class="item col-md-10 col-md-offset-1">
-                    This is some content
-                </div>
-            </div>
-            <h3 class="">Grid layout: .grid-10</h3>
-            <div class="grid-10">
-                <div class="item">
-                    This is some content
-                    <div class="item">Nested content </div>
-                </div>
-                <div class="item">This is some content</div>
-                <div class="item">This is some content</div>
-            </div>
-            <h3>.grid-10--md</h3>
-            <p>Usually you need this layout only for desktop. Use this case.</p>
-            <div class="grid-10--md">
-                <div class="item">This is some content</div>
-                <div class="item">This is some content</div>
-                <div class="item">This is some content</div>
-            </div>
-            <h3 class="">Bootstrap: .col-md-8 .col-md-offset-2</h3>
-            <div class="row">
-                <div class="item col-md-8 col-md-offset-2">
-                    This is some content
-                </div>
-            </div>
-            <h3 class="">Grid layout: .grid-8</h3>
-            <div class="grid-8">
-                <div class="item">This is some content</div>
-                <div class="item">This is some content</div>
-                <div class="item">This is some content</div>
-            </div>
-            <h3 class="">.grid-8--md</h3>
-            <div class="grid-8--md">
-                <div class="item">This is some content</div>
-                <div class="item">This is some content</div>
-                <div class="item">This is some content</div>
-            </div>
 
             <h2 id="alignment" class="">Alignment</h2>
             <h3>.align-items--start</h3>
