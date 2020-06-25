@@ -12,55 +12,76 @@
 
 <body>
     <section class="doc-grid-layout section">
-        <ul class="doc-menu">
-            <li>
-                <a href="#responsive-columns">Responsive columns</a>
-            </li>
-            <li>
-                <a href="#rows">Rows</a>
-            </li>
-            <li>
-                <a href="#gap">Gap</a>
-            </li>
+        <nav>
+            <ul class="doc-menu">
+                <li>
+                    <a href="#responsive-columns">Responsive columns</a>
+                </li>
+                <li>
+                    <a href="#rows">Rows</a>
+                </li>
+                <li>
+                    <a href="#gap">Gap</a>
+                </li>
 
-            <li>
-                <a href="#reverse">Reverse</a>
-            </li>
-            <li>
-                <a href="#order">Ordering</a>
-            </li>
+                <li>
+                    <a href="#reverse">Reverse</a>
+                </li>
+                <li>
+                    <a href="#order">Ordering</a>
+                </li>
 
-            <li>
-                <a href="#alignment">Aligment</a>
-            </li>
-            <li>
-                <a href="#common-patterns">Common patterns</a>
-            </li>
-            <li>
-                <a href="#columns">Grid Layout in Neptune</a>
-            </li>
-            <li>
-                <a href="#bootstrap">Bootstrap cols</a>
-            </li>
-        </ul>
+                <li>
+                    <a href="#alignment">Aligment</a>
+                </li>
+                <li>
+                    <a href="#common-patterns">Common patterns</a>
+                </li>
+            </ul>
+            <p class="m-l-4">Archive</p>
+            <ul>
+                <li>
+                    <a href="#columns">Grid Layout in Neptune</a>
+                </li>
+                <li>
+                    <a href="#bootstrap">Bootstrap cols</a>
+                </li>
+            </ul>
+        </nav>
         <div class="container">
             <h1 class="colored-dot">Grid Layout system</h1>
             <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank"
                 rel="noopener noreferrer">Here a complete guide</a>
+            <div class="grid-2 gap">
+                <div>
+                    <h3>Pros</h3>
+                    <ul>
+                        <li>Simple to use</li>
+                        <li>Custom system to our needs. Flexible</li>
+                        <li>Easy reverse and ordering</li>
+                        <li>Less code. Simple DOM and lighter CSS</li>
+                        <li>Use of standard and modern code</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Cons</h3>
+                    <ul>
+                        <li>Not supported in IE11. Need fallback</li>
+                        <li>Have to learn something new</li>
+                    </ul>
+                </div>
+            </div>
+            <h2>General usage</h2>
             <p>
                 The columns are defined in the <strong>parent component</strong>
             </p>
-            <ul>
-                <li>Simple to use</li>
-                <li>Only common uses</li>
-                <li>Custom system to our needs</li>
-            </ul>
             <pre>
 &lt;div class="grid-2"&gt;
     &lt;div class="item"&gt;Item&lt;/div&gt;
     &lt;div class="item"&gt;Item&lt;/div&gt;
 &lt;/div&gt;
             </pre>
+            <p>Ordering is applied to the child item.</p>
             <h2 id="responsive-columns">Responsive columns</h2>
             <p>Basic simple system</p>
             <p class="alert alert-warning">By now only 1 breakpoint in medium size 768px & 2, 3 4 columns. Do we need
@@ -140,11 +161,18 @@
     &lt;div class="item"&gt;Item&lt;/div&gt;
     &lt;div class="item"&gt;Item&lt;/div&gt;
 &lt;/div&gt;</pre>
-            <h4 id="gap" class="">
-                .gap
-            </h4>
+
+            <h3 class="">.gap</h3>
             <p>The default gap is for both columns and rows.</p>
             <div class="grid-2 gap">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+
+            <h3 class="">.gap--32</h3>
+            <div class="grid-2 gap--32">
                 <div class="item">Item</div>
                 <div class="item">Item</div>
                 <div class="item">Item</div>
@@ -189,11 +217,19 @@
             </div>
 
             <h2 id="order">Ordering</h2>
-            <p>The class is added to the <strong>child item</strong></p>
+            <p>The class must be added to the <strong>child item</strong></p>
+            <h3>.order-1--mobile</h3>
+            <pre>
+                &lt;div class="grid-4--md"&gt;
+                    &lt;div class="item"&gt;1 item&lt;/div&gt;
+                    &lt;div class="item"&gt;2 item&lt;/div&gt;
+                    &lt;div class="item order-1--mobile"&gt;3 item&lt;/div&gt;
+                    &lt;div class="item"&gt;4 item&lt;/div&gt;
+                &lt;/div&gt;</pre>
             <div class="grid-4--md">
                 <span class="item">1 item</span>
                 <span class="item">2 item</span>
-                <span class="item order-1--mobile">3 item. I want to be first on mobile</span>
+                <span class="item order-1--mobile highlight">3 item. I want to be first on mobile</span>
                 <span class="item">4 item</span>
             </div>
 
@@ -215,6 +251,7 @@
                 <div class="item">This is some content</div>
             </div>
             <h3>.grid-10--md</h3>
+            <p>Usually you need this layout only for desktop. Use this case.</p>
             <div class="grid-10--md">
                 <div class="item">This is some content</div>
                 <div class="item">This is some content</div>
@@ -364,10 +401,7 @@
                 <div class="item">Item</div>
             </div>
 
-
-            <h3 class="">Semantic spacing?</h3>
-
-            <h1 id="bootstrap" class=" colored-dot">Bootstrap col system</h1>
+            <h2 id="bootstrap" class=" colored-dot">Bootstrap col system</h2>
             <div class="row">
                 <div class="item col-md-1">.col-md-1</div>
             </div>
