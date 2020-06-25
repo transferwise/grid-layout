@@ -26,6 +26,9 @@
             <li>
                 <a href="#reverse">Reverse</a>
             </li>
+            <li>
+                <a href="#order">Ordering</a>
+            </li>
 
             <li>
                 <a href="#alignment">Aligment</a>
@@ -47,6 +50,11 @@
             <p>
                 The columns are defined in the <strong>parent component</strong>
             </p>
+            <ul>
+                <li>Simple to use</li>
+                <li>Only common uses</li>
+                <li>Custom system to our needs</li>
+            </ul>
             <pre>
 &lt;div class="grid-2"&gt;
     &lt;div class="item"&gt;Item&lt;/div&gt;
@@ -101,7 +109,7 @@
 
             <h2 id="rows">Rows</h2>
             <p>The rows are autoplaced</p>
-<pre>
+            <pre>
 &lt;div class="grid-3"&gt;
     &lt;div class="item"&gt;Item&lt;/div&gt;
     &lt;div class="item"&gt;Item&lt;/div&gt;
@@ -119,8 +127,10 @@
 
             <h2 id="gap" class="">Gap</h2>
             <ul>
-                <li>The <strong>default</strong> --gap is <strong>--space-16</strong> for mobile, <strong>--space-24</strong> for desktop</li>
-                <li>The <strong>column</strong> --gap is <strong>100%/12</strong>. More or less as a Bootstrap col size.</li>
+                <li>The <strong>default</strong> --gap is <strong>--space-16</strong> for mobile,
+                    <strong>--space-24</strong> for desktop</li>
+                <li>The <strong>column</strong> --gap is <strong>100%/12</strong>. More or less as a Bootstrap col size.
+                </li>
             </ul>
 
             <pre>
@@ -140,7 +150,7 @@
             </div>
             <h3 class="">.gap--column</h3>
             <p>Gap only for columns. The space is 100%/12</p>
-<pre>
+            <pre>
     :root {
         --gap: calc(100% / 12);
     }
@@ -153,6 +163,7 @@
             </div>
 
             <h2 id="reverse" class="">Reverse</h2>
+            <p>The reverse mode is only horizontal (by now).</p>
             <h3>.reverse</h3>
             <pre>
 &lt;div class="grid-2 reverse"&gt;
@@ -172,6 +183,15 @@
                 <span class="item">1 item</span>
                 <span class="item">2 item</span>
                 <span class="item">3 item</span>
+                <span class="item">4 item</span>
+            </div>
+
+            <h2 id="order">Ordering</h2>
+            <p>The class is added to the <strong>child item</strong></p>
+            <div class="grid-4--md">
+                <span class="item">1 item</span>
+                <span class="item">2 item</span>
+                <span class="item order-1--mobile">3 item. I want to be first on mobile</span>
                 <span class="item">4 item</span>
             </div>
 

@@ -32,3 +32,13 @@ h4 {
   background-color: var(--color-background-neutral);
   border: 1px solid var(--color-text-secondary);
 }
+
+/* Easter egg */
+
+.order-1--mobile {
+  @media (--screen-sm-max) {
+    &::after {
+      content: " 🎉";
+    }
+  }
+}
