@@ -73,6 +73,10 @@
       grid-gap: var(--space-24);
     }
 
+    &--32 {
+      grid-gap: var(--space-32);
+    }
+
     &--column {
       grid-column-gap: calc(100% / 12);
     }
@@ -88,19 +92,38 @@
 
   /* Patterns */
 
+  .grid-12 {
+    grid-template-columns: 1fr;
+  }
+
   .grid-10 {
-    display: grid;
     grid-template-columns: var(--gap) 1fr var(--gap);
     > * {
       grid-column: 2;
     }
+
+    &--md {
+      @media (--screen-md) {
+        grid-template-columns: var(--gap) 1fr var(--gap);
+        > * {
+          grid-column: 2;
+        }
+      }
+    }
   }
 
   .grid-8 {
-    display: grid;
     grid-template-columns: calc(var(--gap) * 2) 1fr calc(var(--gap) * 2);
     > * {
       grid-column: 2;
+    }
+    &--md {
+      @media (--screen-md) {
+        grid-template-columns: calc(var(--gap) * 2) 1fr calc(var(--gap) * 2);
+        > * {
+          grid-column: 2;
+        }
+      }
     }
   }
 
