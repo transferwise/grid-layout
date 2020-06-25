@@ -193,6 +193,14 @@
   }
 }
 
+.no-gap {
+  grid-gap: 0;
+}
+
+.grid-row-gap--6 {
+  grid-row-gap: calc(var(--spacer) * 6);
+}
+
 /* Patterns */
 
 .grid-10 {
@@ -211,6 +219,8 @@
   }
 }
 
+/* Alignments */
+
 .justify-self-center {
   > * {
     justify-self: center;
@@ -227,12 +237,27 @@
   }
 }
 
-.no-gap {
-  grid-gap: 0;
-}
+/* Reverse */
 
-.grid-row-gap--6 {
-  grid-row-gap: calc(var(--spacer) * 6);
+.reverse {
+  grid-auto-flow: dense;
+
+  > *:first-child {
+    grid-column-end: -1;
+  }
+
+  &.grid-3,
+  &.grid-4 {
+    > *:nth-child(2) {
+      grid-column-end: -2;
+    }
+  }
+
+  &.grid-4 {
+    > *:nth-child(3) {
+      grid-column-end: -3;
+    }
+  }
 }
 
 /* Items */
