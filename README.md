@@ -1,6 +1,6 @@
 # grid-layout
 
-⚠️ This is an experiment
+⚠️ This is a creation playground. Still in building process.
 
 ## Objetive: 
 
