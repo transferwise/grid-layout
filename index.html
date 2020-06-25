@@ -17,6 +17,9 @@
                 <a href="#responsive-columns">Responsive columns</a>
             </li>
             <li>
+                <a href="#rows">Rows</a>
+            </li>
+            <li>
                 <a href="#gap">Gap</a>
             </li>
 
@@ -67,8 +70,6 @@
                 <div class="item">Item</div>
                 <div class="item">Item</div>
                 <div class="item">Item</div>
-                <div class="item">Item</div>
-                <div class="item">Item</div>
             </div>
             <h3>.grid-3--md</h3>
             <div class="grid-3--md">
@@ -98,30 +99,55 @@
                 <div class="item">Item</div>
             </div>
 
+            <h2 id="rows">Rows</h2>
+            <p>The rows are autoplaced</p>
+<pre>
+&lt;div class="grid-3"&gt;
+    &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div class="item"&gt;Item&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+            <h3>.grid-3</h3>
+            <div class="grid-3">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+                <div class="item">Item</div>
+            </div>
+
             <h2 id="gap" class="">Gap</h2>
             <ul>
-                <li>The <strong>default</strong> --gap is 100%/12. More or less as a Bootstrap col size.</li>
-                <li>The <strong>small</strong> --gap is --space-24</li>
+                <li>The <strong>default</strong> --gap is <strong>--space-16</strong> for mobile, <strong>--space-24</strong> for desktop</li>
+                <li>The <strong>column</strong> --gap is <strong>100%/12</strong>. More or less as a Bootstrap col size.</li>
             </ul>
-            <p></p>
+
             <pre>
-:root {
-    --gap: calc(100% / 12);
-}</pre>
-            <pre>
-&lt;div class="grid-2 with-gap"&gt;
+&lt;div class="grid-2 gap"&gt;
     &lt;div class="item"&gt;Item&lt;/div&gt;
     &lt;div class="item"&gt;Item&lt;/div&gt;
 &lt;/div&gt;</pre>
             <h4 id="gap" class="">
-                .with-gap
+                .gap
             </h4>
-            <div class="grid-2 with-gap">
+            <p>The default gap is for both columns and rows.</p>
+            <div class="grid-2 gap">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
                 <div class="item">Item</div>
                 <div class="item">Item</div>
             </div>
-            <h3 class="">.with-gap--sm</h3>
-            <div class="grid-2 with-gap--sm">
+            <h3 class="">.gap--column</h3>
+            <p>Gap only for columns. The space is 100%/12</p>
+<pre>
+    :root {
+        --gap: calc(100% / 12);
+    }
+</pre>
+            <div class="grid-2 gap--column">
+                <div class="item">Item</div>
+                <div class="item">Item</div>
                 <div class="item">Item</div>
                 <div class="item">Item</div>
             </div>
@@ -130,8 +156,8 @@
             <h3>.reverse</h3>
             <pre>
 &lt;div class="grid-2 reverse"&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
-    &lt;div class="item"&gt;Item&lt;/div&gt;
+    &lt;div class="item"&gt;1 item&lt;/div&gt;
+    &lt;div class="item"&gt;2 item&lt;/div&gt;
 &lt;/div&gt;</pre>
             <div class="grid-2 reverse">
                 <span class="item">1 item</span>
@@ -151,12 +177,14 @@
 
             <h2 id="common-patterns" class="">Common patters</h2>
             <h3 class="">Bootstrap: .col-md-10 .col-md-offset-1</h3>
+            <p>The boostrap system has a horizontal margin: -12px in the row, that's why it is a bit wider. </p>
             <div class="row">
                 <div class="item col-md-10 col-md-offset-1">
                     This is some content
                 </div>
             </div>
-            <h3 class="">Grid layout: .grid-10</h3>
+            <h3 class="">Grid layout: .grid-10/12</h3>
+
             <div class="grid-10">
                 <div class="item">
                     This is some content
@@ -179,7 +207,8 @@
             </div>
 
             <h2 id="alignment" class="">Alignment</h2>
-            <div class="d-grid grid--1-1">
+            <h3>.align-items--start</h3>
+            <div class="grid-2 align-items--start">
                 <div class="item">This is some content</div>
                 <div class="item">
                     This is some content. Lorem ipsum dolor sit amet, consectetur
@@ -197,7 +226,8 @@
                     vestibulum. Aliquam ut dolor at leo consectetur scelerisque.{" "}
                 </div>
             </div>
-            <div class="d-grid grid--1-1 align-items--center">
+            <h3>.align-items--center</h3>
+            <div class="grid-2 align-items--center">
                 <div class="item">This is some content</div>
                 <div class="item">
                     This is some content. Lorem ipsum dolor sit amet, consectetur
