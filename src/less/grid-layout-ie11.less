@@ -1,0 +1,59 @@
+/* Using this for IE11 that can’t handle feature queries (@support). */
+/*TODO document this media targeting*/
+
+@media (-ms-high-contrast: active) and (-ms-high-contrast: none) {
+  [class^="grid-"],
+  [class*=" grid-"] {
+    display: flex;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    > * {
+      flex: 1;
+    }
+  }
+}
+
+.grid-2--sm,
+.grid-3--sm,
+.grid-4--sm {
+  flex-direction: column;
+
+  @media (-ms-high-contrast: active),
+    screen and (--screen-sm) and (-ms-high-contrast: none) {
+    flex-direction: row;
+    > * {
+      flex: 1;
+    }
+  }
+}
+
+.grid-2--md,
+.grid-3--md,
+.grid-4--md {
+  flex-direction: column;
+
+  @media (-ms-high-contrast: active),
+    screen and (--screen-md) and (-ms-high-contrast: none) {
+    flex-direction: row;
+    > * {
+      flex: 1;
+    }
+  }
+}
+
+.grid-2--lg,
+.grid-3--lg,
+.grid-4--lg {
+  flex-direction: column;
+
+  @media (-ms-high-contrast: active),
+    screen and (--screen-lg) and (-ms-high-contrast: none) {
+    flex-direction: row;
+    > * {
+      flex: 1;
+    }
+  }
+}
