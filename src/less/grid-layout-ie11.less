@@ -2,58 +2,112 @@
 /*TODO document this media targeting*/
 
 @media (-ms-high-contrast: active) and (-ms-high-contrast: none) {
-  [class^="grid-"],
-  [class*=" grid-"] {
-    display: flex;
-  }
+[class^="grid-"],
+[class*=" grid-"] {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    > * {
-      flex: 1;
+.grid-2 {
+  > * {
+    width: 50%;
+  }
+}
+
+.grid-3 {
+  > * {
+    width: 33%;
+  }
+}
+
+.grid-4 {
+  > * {
+    width: 25%;
+  }
+}
+
+// .grid-2,
+// .grid-3,
+// .grid-4 {
+//   > * {
+//     flex: 1 0 auto;
+//   }
+// }
+
+/* ... */
+
+[class^="grid-2-"],
+[class*=" grid-2-"],
+[class^="grid-3-"],
+[class*=" grid-3-"],
+[class^="grid-4-"],
+[class*=" grid-4-"] {
+  flex-direction: column; 
+  width: 100%;
+}
+
+/* ...*/
+/* ...*/
+}
+.create-flex-columns (@breakpoint, @modifier, @cols, @width) {
+  .grid-@{cols}--@{modifier} {
+    //   @media (-ms-high-contrast: active),
+    //     screen and (--screen-sm) and (-ms-high-contrast: none) {
+    @media (min-width: @breakpoint) {
+      flex-direction: row;
+
+      > * {
+        width: @width;
+      }
     }
   }
 }
 
-.grid-2--sm,
-.grid-3--sm,
-.grid-4--sm {
-  flex-direction: column;
+@screen-sm: 576px;
+@screen-md: 768px;
+@screen-lg: 992px;
+@screen-xl: 1200px;
 
-  @media (-ms-high-contrast: active),
-    screen and (--screen-sm) and (-ms-high-contrast: none) {
-    flex-direction: row;
-    > * {
-      flex: 1;
-    }
-  }
-}
+.create-flex-columns (@screen-sm, sm, 2, 50%);
+.create-flex-columns (@screen-md, md, 2, 50%);
+.create-flex-columns (@screen-lg, lg, 2, 50%);
 
-.grid-2--md,
-.grid-3--md,
-.grid-4--md {
-  flex-direction: column;
+.create-flex-columns (@screen-sm, sm, 3, 33%);
+.create-flex-columns (@screen-md, md, 3, 33%);
+.create-flex-columns (@screen-lg, lg, 3, 33%);
 
-  @media (-ms-high-contrast: active),
-    screen and (--screen-md) and (-ms-high-contrast: none) {
-    flex-direction: row;
-    > * {
-      flex: 1;
-    }
-  }
-}
+.create-flex-columns (@screen-sm, sm, 4, 25%);
+.create-flex-columns (@screen-md, md, 4, 25%);
+.create-flex-columns (@screen-lg, lg, 4, 25%);
 
-.grid-2--lg,
-.grid-3--lg,
-.grid-4--lg {
-  flex-direction: column;
+// .grid-2--md,
+// .grid-3--md,
+// .grid-4--md {
+//   flex-direction: column;
 
-  @media (-ms-high-contrast: active),
-    screen and (--screen-lg) and (-ms-high-contrast: none) {
-    flex-direction: row;
-    > * {
-      flex: 1;
-    }
-  }
-}
+//   //   @media (-ms-high-contrast: active),
+//   //     screen and (--screen-md) and (-ms-high-contrast: none) {
+//   @media (--screen-md) {
+//     flex-direction: row;
+
+//     > * {
+//       flex: 1 0 auto;
+//     }
+//   }
+// }
+
+// .grid-2--lg,
+// .grid-3--lg,
+// .grid-4--lg {
+//   flex-direction: column;
+
+//   //   @media (-ms-high-contrast: active),
+//   //     screen and (--screen-lg) and (-ms-high-contrast: none) {
+//   @media (--screen-lg) {
+//     flex-direction: row;
+
+//     > * {
+//       flex: 1 0 auto;
+//     }
+//   }
+// }
